@@ -1,6 +1,8 @@
 package de.borellda.domain.base;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
@@ -8,7 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
 import java.util.UUID;
-import java.util.logging.Logger;
 
 /**
  * Created by borellda on 3/15/2016.
@@ -18,7 +19,7 @@ public abstract class CoreEntity implements Serializable{
     /** The Constant serialVersionUID. */
     private static final long serialVersionUID = 8040475093858149074L;
     /** The Logger **/
-    private static final Logger log = LoggerFactory.getLogger(CoreEntity.class.getName());
+    private static final Logger log = LoggerFactory.getLogger(CoreEntity.class);
 
     @Id
     @GeneratedValue(generator = "uuid")

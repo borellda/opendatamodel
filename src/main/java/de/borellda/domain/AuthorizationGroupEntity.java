@@ -2,7 +2,7 @@ package de.borellda.domain;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.logging.Logger;
+import org.slf4j.*;
 
 /**
  * Created by borellda on 2/24/2016.
