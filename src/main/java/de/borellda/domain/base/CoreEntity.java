@@ -54,7 +54,12 @@ public abstract class CoreEntity implements Serializable{
     /** {@inheritDoc} */
     @Override
     public int hashCode() {
-        return (getClass() + "." + getLabel()).hashCode();
+
+        int result = 1;
+        result = ((result << 5) - result) + getClass().hashCode();
+        result = ((result << 5) - result) + id.hashCode();
+        result = ((result << 5) - result) + label.hashCode();
+        return result;
     }
 
     /** {@inheritDoc} */
@@ -75,11 +80,21 @@ public abstract class CoreEntity implements Serializable{
 
         CoreEntity other = (CoreEntity) obj;
 
-        // if the name is missing, return false
-        if (getLabel() == null) {
+        if (null == getId() && null != other.getId() ) {
             return false;
         }
-        return getLabel().equals(other.getLabel());
+        if (!getId().equals(other.getId())){
+            return false;
+        }
+
+        if (null == getLabel() && null != other.getLabel() ) {
+            return false;
+        }
+        if (!getLabel().equals(other.getLabel())){
+            return false;
+        }
+
+        return true;
     }
 
     /** {@inheritDoc} */
