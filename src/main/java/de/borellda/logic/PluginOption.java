@@ -9,6 +9,7 @@ import java.util.Set;
 
 /**
  * Created by borellda on 5/26/2016.
+ * USING https://code.google.com/archive/p/reflections/
  */
 public class PluginOption {
     /* The Logger */
