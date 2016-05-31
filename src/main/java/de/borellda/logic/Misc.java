@@ -59,4 +59,9 @@ public class Misc {
 
     }
 
+    public void checkBuilder(){
+        FluentThreadsafeBuilder b = new FluentThreadsafeBuilder();
+        Product p = b.begin().tire(4).end();
+    }
+
 }
